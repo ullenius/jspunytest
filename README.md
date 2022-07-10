@@ -28,7 +28,7 @@ Run your tests with `node`:
 
 ```bash
 $ node example/node-usage.js
-Test: foobar OK                                                                                                     
+Test: foobar OK
 Tests: 1 passed, 1 total
 ```
 
@@ -37,7 +37,6 @@ Tests: 1 passed, 1 total
 ## Features
 * Supports Node v8.x or later.
 * Backwards compatible with `jstinytest`.
-* Web version still works as usual.
 
 ## Original readme below
 This is an in-browser JavaScript library I've been using for years. It's so small and simple that it never occurred to me to open source it until I saw all the overly complicated alternatives that are out there.
@@ -46,7 +45,7 @@ If you're looking for a JavaScript library full of features or install guides th
 
 If you're looking for a quick way to unit-test a JavaScript function/object in a web-page and don't want to get bogged down in frameworks, you've come to the right place. Take a seat... no scratch that, you'll have everything you need in a few seconds so you may as well remain standing.
 
-*   [Download punytest.js](https://rawgit.com/ullenius/jspunytest/master/tinytest.js)
+*   [Download punytest.js](https://rawgit.com/ullenius/jspunytest/master/punytest.js)
 *   [Example](https://github.com/ullenius/jspunytest/tree/master/example)
 
 10 second tutorial
@@ -65,7 +64,7 @@ function add(a, b) {
 Create a test page called `adder-test.html` (you can name it anything). This includes your code under test, `punytest.js` and defines your tests:
 
 ```html
-<script src="tinytest.js"></script>
+<script src="punytest.js"></script>
 <script src="adder.js"></script>
 <script>
  tests({
