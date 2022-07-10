@@ -87,13 +87,14 @@ var TinyTest = {
 
 };
 
+function isBrowser() {
+    return !isNode();
+}
+
 function isNode() {
     return typeof window === "undefined";
 }
 
-function isBrowser() {
-    return !isNode();
-}
 
 var   fail                = TinyTest.fail,
       assert              = TinyTest.assert,
