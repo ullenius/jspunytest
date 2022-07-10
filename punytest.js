@@ -39,17 +39,7 @@ var TinyTest = {
                 console.error(e.stack);
             }
         }
-        var total = failures + passed;
-        if (failures) {
-            console.error(
-                `Tests: ${failures} failed, ${passed} passed, ${total} total`
-            );
-        }
-        else {
-            console.log(
-                `Tests: ${passed} passed, ${total} total`
-            );
-        }
+        printTestResults();
         setTimeout(function wait() { // Give document a chance to complete
         if (isBrowser() ) {
             if (window.document && document.body) {
@@ -57,6 +47,20 @@ var TinyTest = {
             }
         }
         }, 0);
+
+        function printTestResults() {
+            var total = passed + failures;
+            if (failures) {
+                console.error(
+                    `Tests: ${failures} failed, ${passed} passed, ${total} total`
+                );
+            }
+            else {
+                console.log(
+                    `Tests: ${passed} passed, ${total} total`
+                );
+            }
+        }
     },
 
     fail: function fail(msg) {
