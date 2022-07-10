@@ -1,0 +1,22 @@
+{
+  "name": "jspunytest",
+  "version": "1.1.0",
+  "description": "Puny JS unit testing library",
+  "main": "punytest.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "node example/node-usage.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ullenius/jspunytest.git"
+  },
+  "author": "A. Ullenius",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ullenius/jspunytest/issues"
+  },
+  "homepage": "https://github.com/ullenius/jspunytest#readme"
+}
