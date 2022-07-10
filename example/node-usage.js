@@ -3,7 +3,7 @@
 
 var {
     fail, assert, assertEquals, assertStrictEquals, tests 
-} = require("../tinytest.js");
+} = require("../punytest.js");
 
 tests({
     "foobar" : function foo() {

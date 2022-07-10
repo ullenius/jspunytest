@@ -22,13 +22,13 @@
  * SOFTWARE.
 */
 "use strict";
-const TinyTest = {
+var TinyTest = {
 
-    run: function(tests) {
-        let failures = 0;
+    run: function run(tests) {
+        var failures = 0;
         var passed = 0;
-        for (let testName in tests) {
-            let testAction = tests[testName];
+        for (var testName in tests) {
+            var testAction = tests[testName];
             try {
                 testAction();
                 console.log('Test:', testName, 'OK');
@@ -50,7 +50,7 @@ const TinyTest = {
                 `Tests: ${passed} passed, ${total} total`
             );
         }
-        setTimeout(function() { // Give document a chance to complete
+        setTimeout(function wait() { // Give document a chance to complete
         if (isBrowser() ) {
             if (window.document && document.body) {
                 document.body.style.backgroundColor = (failures == 0 ? '#99ff99' : '#ff9999');
@@ -59,23 +59,23 @@ const TinyTest = {
         }, 0);
     },
 
-    fail: function(msg) {
+    fail: function fail(msg) {
         throw new Error('fail(): ' + msg);
     },
 
-    assert: function(value, msg) {
+    assert: function assert(value, msg) {
         if (!value) {
             throw new Error('assert(): ' + msg);
         }
     },
 
-    assertEquals: function(expected, actual) {
+    assertEquals: function assertEquals(expected, actual) {
         if (expected != actual) {
             throw new Error(`assertEquals() "${expected}" != "${actual}"`);
         }
     },
 
-    assertStrictEquals: function(expected, actual) {
+    assertStrictEquals: function assertStrictEquals(expected, actual) {
         if (expected !== actual) {
             throw new Error(`assertStrictEquals() "${expected}" !== "${actual}"`);
         }
@@ -91,7 +91,7 @@ function isBrowser() {
     return !isNode();
 }
 
-const fail                = TinyTest.fail,
+var   fail                = TinyTest.fail,
       assert              = TinyTest.assert,
       assertEquals        = TinyTest.assertEquals,
       eq                  = TinyTest.assertEquals, // alias for assertEquals
