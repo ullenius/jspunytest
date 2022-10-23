@@ -125,7 +125,7 @@ eq(expected, actual) // Alias for assertEquals
 // Assert expected === actual
 assertStrictEquals(expected, actual)
 
-// Assert when enclosed close throws an exception of type X or any of its
+// Assert when enclosed code throws an exception of type X or any of its
 // derived types
 assertThrows( Error, function willThrowException() {
     throw new EvalError(); // derived of type Error
