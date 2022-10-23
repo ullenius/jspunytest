@@ -86,7 +86,6 @@ var TinyTest = {
     },
 
     assertThrows : function assertThrows(exception, func) {
-        var threwException = false;
         try {
             func();
         } catch (err) {
@@ -98,6 +97,9 @@ var TinyTest = {
             }
             return err;
         }
+        throw new Error(
+            `assertThrows() expected exception "${exception.name}" but nothing \
+            was thrown`);
     }
 };
 

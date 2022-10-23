@@ -13,11 +13,11 @@ tests({
     },
 
     "flaky throws" : function bar() {
-        assertThrows(Error, function check() {
-            var foo = flaky();
-            var expectedMessage = "Oops";
-            assertEquals(expectedMessage, foo);
+        var exception = assertThrows(Error, function check() {
+            flaky();
         });
+        var expectedMessage = "Oops";
+        assertStrictEquals(expectedMessage, exception.message);
      }
 
 });

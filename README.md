@@ -12,7 +12,7 @@ Then create your unit-tests in stand-alone files:
 ```javascript
 // node-usage.js
 var {
-    fail, assert, assertEquals, assertStrictEquals, tests
+    fail, assert, assertEquals, assertStrictEquals, assertThrows, tests
 } = require("./punytest.js");
 
 tests({
@@ -22,17 +22,17 @@ tests({
         assertEquals(expected, actual);
     },
     "flaky throws" : function bar() {
-        assertThrows(Error, function check() {
-            var foo = flaky();
-            var expectedMessage = "Oops";
-            assertEquals(expectedMessage, foo);
+        var exception = assertThrows(Error, function check() {
+            flaky();
         });
+        var expectedMessage = "Oops";
+        assertStrictEquals(expectedMessage, exception.message);
      }
-
-    function flaky() {
-        throw new EvalError("Oops");
-    }
 });
+
+function flaky() {
+    throw new EvalError("Oops");
+}
 ```
 
 Run your tests with `node`:
