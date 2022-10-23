@@ -40,7 +40,8 @@ Run your tests with `node`:
 ```bash
 $ node example/node-usage.js
 Test: foobar OK
-Tests: 1 passed, 1 total
+Test: flaky throws OK
+Tests: 2 passed, 2 total
 ```
 
 * That's it!
