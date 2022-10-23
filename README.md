@@ -20,6 +20,17 @@ tests({
         var expected = 42;
         var actual = 21 * 2;
         assertEquals(expected, actual);
+    },
+    "flaky throws" : function bar() {
+        assertThrows(Error, function check() {
+            var foo = flaky();
+            var expectedMessage = "Oops";
+            assertEquals(expectedMessage, foo);
+        });
+     }
+
+    function flaky() {
+        throw new EvalError("Oops");
     }
 });
 ```
@@ -113,6 +124,12 @@ eq(expected, actual) // Alias for assertEquals
 
 // Assert expected === actual
 assertStrictEquals(expected, actual)
+
+// Assert when enclosed close throws an exception of type X or any of its
+// derived types
+assertThrows( Error, function willThrowException() {
+    throw new EvalError(); // derived of type Error
+});
 ```
 
 Errm that's it. Now stop wasting time - go test that function.

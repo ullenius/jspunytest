@@ -2,7 +2,7 @@
 "use strict";
 
 var {
-    fail, assert, assertEquals, assertStrictEquals, tests 
+    fail, assert, assertEquals, assertStrictEquals, assertThrows, tests 
 } = require("../punytest.js");
 
 tests({
@@ -10,5 +10,18 @@ tests({
         var expected = 42;
         var actual = 21 * 2;
         assertEquals(expected, actual);
-    }
+    },
+
+    "flaky throws" : function bar() {
+        assertThrows(Error, function check() {
+            var foo = flaky();
+            var expectedMessage = "Oops";
+            assertEquals(expectedMessage, foo);
+        });
+     }
+
 });
+
+function flaky() {
+    throw new EvalError("Oops");
+}
