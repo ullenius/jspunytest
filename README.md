@@ -121,7 +121,6 @@ assert(expression, reason);
 
 // Assert expected == actual
 assertEquals(expected, actual)
-eq(expected, actual) // Alias for assertEquals
 
 // Assert expected === actual
 assertStrictEquals(expected, actual)

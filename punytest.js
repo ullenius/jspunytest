@@ -114,13 +114,12 @@ function isNode() {
 var   fail                = TinyTest.fail,
       assert              = TinyTest.assert,
       assertEquals        = TinyTest.assertEquals,
-      eq                  = TinyTest.assertEquals, // alias for assertEquals
       assertStrictEquals  = TinyTest.assertStrictEquals,
       assertThrows        = TinyTest.assertThrows,
       tests               = TinyTest.run;
 
 if (isNode() ) {
     module.exports = { 
-        fail, assert, assertEquals, eq, assertStrictEquals, assertThrows, tests
+        fail, assert, assertEquals, assertStrictEquals, assertThrows, tests
     };
 }
